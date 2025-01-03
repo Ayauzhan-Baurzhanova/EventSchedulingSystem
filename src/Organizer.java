@@ -1,13 +1,13 @@
-// Organizer.java
 public class Organizer {
     private String name;
-    private String contactInfo;
+    private String role;
 
-    public Organizer(String name, String contactInfo) {
+    public Organizer(String name, String role) {
         this.name = name;
-        this.contactInfo = contactInfo;
+        this.role = role;
     }
 
+    // Getters and Setters
     public String getName() {
         return name;
     }
@@ -16,17 +16,31 @@ public class Organizer {
         this.name = name;
     }
 
-    public String getContactInfo() {
-        return contactInfo;
+    public String getRole() {
+        return role;
     }
 
-    public void setContactInfo(String contactInfo) {
-        this.contactInfo = contactInfo;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override
     public String toString() {
-        return "Organizer: " + name + ", Contact: " + contactInfo;
+        return "Organizer: " + name + ", Role: " + role;
     }
 }
+
+// Subclasses
+class TeamStaff extends Organizer {
+    public TeamStaff(String name, String role) {
+        super(name, role);
+    }
+}
+
+class ExternalOrganizer extends Organizer {
+    public ExternalOrganizer(String name, String role) {
+        super(name, role);
+    }
+}
+
 
